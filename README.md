@@ -41,7 +41,7 @@ Then copy it.
 
 Open `lan-world-discord-integration.toml`, paste the token in like this, make sure you save the file too. 
 
-<img width="1105" height="127" alt="image" src="https://github.com/user-attachments/assets/d5c488f3-e19e-45c3-bace-c4810031e1fb" />
+<img width="1105" height="127" alt="image" src="https://github.com/user-attachments/assets/df510060-6d1b-41ae-ab11-3540928b1aff" />
 
 Now go to your discord settings, in `Advanced` section, enable developer mode.
 
@@ -53,7 +53,7 @@ Go to your server and right click the channel you want the bot to be at, then cl
 
 Now paste the channel id in like this in `lan-world-discord-integration.toml`, make sure to save the file.
 
-<img width="1129" height="142" alt="image" src="https://github.com/user-attachments/assets/7a852e9b-2032-49f0-826e-d8fded6d9948" />
+<img width="1131" height="126" alt="image" src="https://github.com/user-attachments/assets/f9e0f8d0-cafa-4719-baf7-8dd2a332d445" />
 
 Now you can start Minecraft, once you enter a world, the bot should start automatically. I will add a command in game to allow the user to start and stop the bot in the future I promise.
 
