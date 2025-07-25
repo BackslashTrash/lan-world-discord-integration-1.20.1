@@ -3,8 +3,6 @@ package net.backslashtrash.config;
 import com.electronwill.nightconfig.core.conversion.Path;
 import com.electronwill.nightconfig.core.conversion.PreserveNotNull;
 
-import java.io.File;
-
 public class CommonConfig {
 
     @Path("discord.bot_ token")

@@ -28,7 +28,7 @@ loom {
 	}
 }
 configurations {
-	implementation.extendsFrom(shadow)  // So shadow dependencies included in implementation
+	implementation.extendsFrom(shadow)
 }
 dependencies {
 	// To change the versions see the gradle.properties file
@@ -84,7 +84,7 @@ shadowJar {
 	relocate('org.reactivestreams', "${relocateBase}.org.reactivestreams")
 	relocate('com.electronwill.nightconfig', "${relocateBase}.nightconfig")
 	relocate 'io.netty', 'net.backslashtrash.shadow.netty'
-	exclude 'META-INF/services/**'  // Avoid possible conflicts with services
+	exclude 'META-INF/services/**'
 }
 
 

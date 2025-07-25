@@ -30,6 +30,13 @@ public class LanWorldDiscordIntegration implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public GatewayDiscordClient discordClient;
 	public ConfigHandler configHandler = new ConfigHandler();
+
+	private static MinecraftServer minecraftServer;
+	static {
+		ServerLifecycleEvents.SERVER_STARTED.register(s -> minecraftServer = s);
+	}
+
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing Lan World Discord Integration");
