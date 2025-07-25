@@ -65,7 +65,7 @@ This is what it should look like once it started running normally:
 
 Now enjoy your simple Minecraft-Discord messenger!
 
--BackslashTrash
+-BackslashTrash, 2025-07-25
 
 
 
