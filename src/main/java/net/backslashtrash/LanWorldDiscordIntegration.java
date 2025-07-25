@@ -7,7 +7,6 @@ import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.entity.channel.MessageChannel;
-import discord4j.rest.http.client.ClientException;
 import net.backslashtrash.config.CommonConfig;
 import net.backslashtrash.config.ConfigHandler;
 import net.backslashtrash.config.SnowflakeConfig;
