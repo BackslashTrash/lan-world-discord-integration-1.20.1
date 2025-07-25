@@ -40,7 +40,7 @@ public class LanWorldDiscordIntegration implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing Lan World Discord Integration");
-		loadConfig();
+		configHandler.init();
 		ServerMessageEvents.CHAT_MESSAGE.register((message, sender, params) -> {
 			if (discordClient != null) {
 				String playerName = sender.getName().getString();
@@ -48,32 +48,40 @@ public class LanWorldDiscordIntegration implements ModInitializer {
 				sendToDiscord("**" + playerName + "**: " + content);
 			}
 		});
-		ServerLifecycleEvents.SERVER_STARTED.register(this::startBot);
+		if (loadConfig()){
+			ServerLifecycleEvents.SERVER_STARTED.register(this::startBot);
+		} else {
+			LOGGER.error("Bot not started due to invalid config.");
+		}
 		ServerLifecycleEvents.SERVER_STOPPED.register(server -> stopBot());
 
 	}
 
-	private void loadConfig() {
-		configHandler.init();
+	private boolean loadConfig() {
+
+		if (botToken == null || botToken.isEmpty() || channelID == 0L) {
+			LOGGER.error("Bot token or channel ID is missing!");
+			return false;
+		}
 		try {
 			TokenUtil.getSelfId(botToken);
-		} catch (ClientException e) {
+		} catch (IllegalArgumentException e) {
 			LOGGER.info("Invalid Discord Token, unable to proceed");
+			return false;
 		}
 
 		try {
 			SnowflakeConfig.isValidChannelId(CommonConfig.channelID);
-		} catch (ClientException e) {
+		} catch (IllegalArgumentException e) {
 			LOGGER.info("Invalid Channel ID, unable to proceed");
+			return false;
 		}
+		return true;
 	}
 
 	private void startBot(MinecraftServer server) {
 		stopBot();
-		if (botToken == null || botToken.isEmpty() || channelID == 0L) {
-			LOGGER.error("Bot token or channel ID is missing!");
-			return;
-		}
+
 		discordClient = DiscordClientBuilder.create(botToken).build().login().block();
 		if (discordClient == null) {
 			LOGGER.error("Failed to connect to Discord!");
