@@ -58,29 +58,29 @@ public class LanWorldDiscordIntegration implements ModInitializer {
 		try {
 			TokenUtil.getSelfId(botToken);
 		} catch (ClientException e) {
-			LOGGER.info("[Lan World Discord Integration] Invalid Discord Token, unable to proceed");
+			LOGGER.info("Invalid Discord Token, unable to proceed");
 		}
 
 		try {
 			SnowflakeConfig.isValidChannelId(CommonConfig.channelID);
 		} catch (ClientException e) {
-			LOGGER.info("[Lan World Discord Integration] Invalid Channel ID, unable to proceed");
+			LOGGER.info("Invalid Channel ID, unable to proceed");
 		}
 	}
 
 	private void startBot(MinecraftServer server) {
 		stopBot();
 		if (botToken == null || botToken.isEmpty() || channelID == 0L) {
-			LOGGER.error("[Lan World Discord Integration] Bot token or channel ID is missing!");
+			LOGGER.error("Bot token or channel ID is missing!");
 			return;
 		}
 		discordClient = DiscordClientBuilder.create(botToken).build().login().block();
 		if (discordClient == null) {
-			LOGGER.error("[Lan World Discord Integration] Failed to connect to Discord!");
+			LOGGER.error("Failed to connect to Discord!");
 			return;
 		}
 
-		LOGGER.info("[Lan World Discord Integration] Connected to Discord.");
+		LOGGER.info("Connected to Discord.");
 		discordClient.getEventDispatcher().on(MessageCreateEvent.class)
 				.filter(event -> event.getMessage().getChannelId().asLong() == channelID)
 				.filter(event -> event.getMessage().getAuthor().map(user -> !user.isBot()).orElse(false))
