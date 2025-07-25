@@ -3,12 +3,12 @@
 	"id": "lan-world-discord-integration",
 	"version": "${version}",
 	"name": "Lan World Discord Integration",
-	"description": "A mod that allows lan or singleplayer worlds to be connected to your discord server. Server side install only is fine.",
+	"description": "A lightweight mod that allows lan or singleplayer worlds to be connected to your discord server. Works on multiplayer servers too!",
 	"authors": [
 		"BackslashTrash"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
+		"homepage": "https://github.com/BackslashTrash",
 		"sources": "https://github.com/BackslashTrash/lan-world-discord-integration-1.20.1"
 	},
 	"license": "MIT",
