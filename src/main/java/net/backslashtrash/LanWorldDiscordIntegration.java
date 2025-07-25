@@ -6,6 +6,7 @@ import discord4j.common.util.TokenUtil;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.message.MessageCreateEvent;
+import discord4j.core.object.entity.User;
 import discord4j.core.object.entity.channel.MessageChannel;
 import net.backslashtrash.config.CommonConfig;
 import net.backslashtrash.config.ConfigHandler;
@@ -107,8 +108,10 @@ public class LanWorldDiscordIntegration implements ModInitializer {
 					content = content.replace("@everyone", "§e@everyone§r");
 					content = content.replace("@here", "§e@here§r");
 
-					String author = event.getMessage().getAuthor().get().getUsername();
-					String finalMessage = "[Discord] " + author + ": " + content;
+					var member = event.getMember().orElse(null);
+					var message = event.getMessage();
+					String displayName = (member != null) ? member.getDisplayName() : message.getAuthor().map(User::getUsername).orElse("Unknown");
+					String finalMessage = "[Discord] " + displayName + ": " + content;
 
 					server.execute(() -> {
 						server.getPlayerManager().broadcast(Text.literal(finalMessage), false);
