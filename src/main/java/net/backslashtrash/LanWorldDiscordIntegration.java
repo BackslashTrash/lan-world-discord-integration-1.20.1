@@ -121,7 +121,7 @@ public class LanWorldDiscordIntegration implements ModInitializer {
 		if (discordClient != null) {
 			discordClient.logout().block();
 			discordClient = null;
-			System.out.println("[Lan World Discord Integration] Bot disconnected.");
+			LOGGER.info("Bot disconnected.");
 		}
 	}
 }
