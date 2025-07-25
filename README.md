@@ -1,6 +1,18 @@
 # Lan World Discord Integration
 It is a mod that allows the user to link their singleplayer/lan world or a multiplayer server to a channel in a discord server, **only the host should have this mod installed**.
 ## Installation Guide
+### Discord Bot setup
+1. In [discord developer portal]([url](https://discord.com/developers/applications)), click the new applications settings.
+<img width="1897" height="901" alt="image" src="https://github.com/user-attachments/assets/e8dfe185-4cdb-4e80-b712-f95c38cfe3cf" />
+
+Then  check the following permissions:
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/a75066bc-f616-41f4-ad84-3ee1be1702bf" />
+
+
+
+
+
+
 ### Installing the mod
 First, drag the mod file into your mod folder. Fabric api is **required** for all versions. Use fabric version **v0.16.14** or above.
 
