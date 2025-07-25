@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "lan-world-discord-integration",
+	"version": "${version}",
+	"name": "Lan World Discord Integration",
+	"description": "A mod that allows Lan worlds to be connected to your discord server.",
+	"authors": [
+		"BackslashTrash"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/lan-world-discord-integration/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.backslashtrash.LanWorldDiscordIntegration"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
