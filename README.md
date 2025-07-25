@@ -37,7 +37,8 @@ Go to the bot page in developer portal and click `Reset Token`:
 
 Then copy it.
 
-<img width="849" height="158" alt="image" src="https://github.com/user-attachments/assets/561eb882-8253-48e2-8677-3247cd323cb5" />
+<img width="828" height="118" alt="image" src="https://github.com/user-attachments/assets/dcfb436b-4006-4bc3-b541-031583af2ef8" />
+
 
 Open `lan-world-discord-integration.toml`, paste the token in like this, make sure you save the file too. 
 
